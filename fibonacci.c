@@ -10,7 +10,7 @@ fibonacci(Monitor *mon, int s) {
 	nx = mon->wx;
 	ny = 0;
 	//nw = mon->ww;
-	nw = mon->ww - m->gappx;
+	nw = mon->ww - mon->gappx;
 	nh = mon->wh;
 	
 	//for(i = 0, c = nexttiled(mon->clients); c; c = nexttiled(c->next)) {
