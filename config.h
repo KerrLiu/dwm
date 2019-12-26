@@ -3,16 +3,16 @@
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappx     = 5;
+static const unsigned int gappx     = 15;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#dddddd";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#224433";
+static const char col_cyan[]        = "#005577";
 static const unsigned int baralpha = 0xef;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -69,7 +69,7 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",	tile },    /* first entry is default */
+	{ "[=]",	tile },    /* first entry is default */
 	{ "[M]",	monocle },
  	{ "[@]",	spiral },
 	{ "|M|",	centeredmaster },
@@ -107,13 +107,13 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,		setmfact,	{.f = +0.05} },
 	{ MODKEY|ShiftMask,				XK_i,		incnmaster,	{.i = +1 } },
 	{ MODKEY|ShiftMask,				XK_o,		incnmaster,	{.i = -1 } },
-	{ MODKEY,						XK_b,		togglebar,	{0} },
+	{ MODKEY,						XK_F11,		togglebar,	{0} },
 	{ MODKEY,						XK_t,		setlayout,	{.v = &layouts[0]} },
 	{ MODKEY,						XK_f,		setlayout,	{.v = &layouts[1]} },
-	{ MODKEY,						XK_y,		setlayout,	{.v = &layouts[2]} },
-	{ MODKEY,						XK_u,		setlayout,	{.v = &layouts[3]} },
-	{ MODKEY,						XK_i,		setlayout,	{.v = &layouts[4]} },
-	{ MODKEY,						XK_o,		setlayout,	{.v = &layouts[5]} },
+	/*{ MODKEY,						XK_y,		setlayout,	{.v = &layouts[2]} },*/
+	{ MODKEY,						XK_m,		setlayout,	{.v = &layouts[3]} },
+	/*{ MODKEY,						XK_i,		setlayout,	{.v = &layouts[4]} },*/
+	/*{ MODKEY,						XK_o,		setlayout,	{.v = &layouts[5]} },*/
 	{ MODKEY,						XK_Tab,		view,		{0} },
 	{ MODKEY,						XK_backslash,	view,		{0} },
 	{ MODKEY|ShiftMask,				XK_space,	togglefloating,	{0} },
