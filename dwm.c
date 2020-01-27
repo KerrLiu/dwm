@@ -782,6 +782,7 @@ drawbar(Monitor *m)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
 				urg & 1 << i);
+
 		x += w;
 	}
 	w = blw = TEXTW(m->ltsymbol);
@@ -1128,8 +1129,8 @@ loadxrdb()
         XRDB_LOAD_COLOR("dwm.color8", selbordercolor);
         XRDB_LOAD_COLOR("dwm.color0", normbgcolor);
         XRDB_LOAD_COLOR("dwm.color6", normfgcolor);
-        XRDB_LOAD_COLOR("dwm.color0", selfgcolor);
-        XRDB_LOAD_COLOR("dwm.color14", selbgcolor);
+        XRDB_LOAD_COLOR("dwm.color4", selfgcolor);
+        XRDB_LOAD_COLOR("dwm.color0", selbgcolor);
       }
     }
   }
