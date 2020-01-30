@@ -28,7 +28,7 @@ static char *colors[][3] = {
 
 /* tagging */
 /*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " "};
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " ", " "};
 
 
 static const Rule rules[] = {
@@ -49,11 +49,14 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 #include "fibonacci.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	// { "[]=",      tile },    /* first entry is default */
+	{ " ",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
+	// { "|M|",      centeredmaster },
+	{ " ",      centeredmaster },
+	// { ">M>",      centeredfloatingmaster },
+	{ " ",      centeredfloatingmaster },
  	{ "[@]",      spiral },
  	{ "[\\]",      dwindle },
 };
