@@ -87,6 +87,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
+
 #include <X11/XF86keysym.h>
 #include "shiftview.c"
 static Key keys[] = {
@@ -121,7 +122,6 @@ static Key keys[] = {
 	{ MODKEY,					XK_l,			setmfact,      	{.f = +0.05} },
 	{ MODKEY,					XK_semicolon,	shiftview,		{.i = 1 } },
 	{ MODKEY,					XK_Return,		spawn,			{.v = termcmd } },
-	/*{ MODKEY|ShiftMask,		XK_Return,		togglescratch,	{.v = scratchpadcmd } },*/
 	{ MODKEY,					XK_z,			incrgaps,		{.i = +1 } },
 	{ MODKEY|ShiftMask,			XK_z,			incrgaps,		{.i = -1 } },
 	{ MODKEY,					XK_b,			togglebar,		{0} },
