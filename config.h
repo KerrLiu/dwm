@@ -104,6 +104,7 @@ static Key keys[] = {
 	TAGKEYS(					XK_8,		7)
 	TAGKEYS(					XK_9,		8)
 	{ MODKEY,					XK_Return,		spawn,			{.v = termcmd } },
+	{ MODKEY|ControlMask,		XK_Return,		togglescratch,	{.v = scratchpadcmd } },
 	{ MODKEY,					XK_0,			view,			{.ui = ~0 } },
 	{ MODKEY|ShiftMask,			XK_0,			tag,			{.ui = ~0 } },
 	{ MODKEY,					XK_q,			killclient,		{0} },
@@ -115,11 +116,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,			XK_i,			incnmaster,     {.i = -1 } },
 	/* { MODKEY,				XK_backslash,	view,			{0} }, */
 	{ MODKEY,					XK_Tab,			view,			{0} },
+	{ MODKEY,					XK_space,		zoom,			{0} },
 	{ MODKEY,					XK_s,			togglesticky,   {0} },
 	{ MODKEY|ShiftMask,			XK_d,			togglegaps,		{0} },
 	{ MODKEY,					XK_f,			togglefullscr,	{0} },
 	{ MODKEY|ShiftMask,			XK_space,		togglefloating,	{0} },
-	/* { MODKEY|ShiftMask,		XK_f,			togglefullscr,	{0} }, */
 	{ MODKEY,					XK_g,			shiftview,		{.i = -1 } },
 	{ MODKEY,					XK_semicolon,	shiftview,		{.i = 1 } },
 	{ MODKEY,					XK_Page_Up,		shiftview,		{.i = -1 } },
@@ -128,15 +129,15 @@ static Key keys[] = {
 	{ MODKEY,					XK_l,			setmfact,      	{.f = +0.05} },
 	{ MODKEY,					XK_z,			incrgaps,		{.i = +1 } },
 	{ MODKEY|ShiftMask,			XK_z,			incrgaps,		{.i = -1 } },
-	{ MODKEY,					XK_b,			togglebar,		{0} },
+	{ MODKEY|ControlMask,		XK_0,			defaultgaps,	{0} },
+	{ MODKEY|ControlMask,		XK_b,			togglebar,		{0} },
 	{ MODKEY|ShiftMask,			XK_e,			quit,			{0} },
 	{ MODKEY,					XK_F5,			xrdb,			{.v = NULL } },
-	{ MODKEY,					XK_space,		zoom,			{0} },
+	{ MODKEY,					XK_comma,		focusmon,		{.i = -1 } },
+	{ MODKEY,					XK_period,		focusmon,		{.i = +1 } },
+	{ MODKEY|ShiftMask,			XK_comma,		tagmon,			{.i = -1 } },
+	{ MODKEY|ShiftMask,			XK_period,		tagmon,			{.i = +1 } },
 	/* { MODKEY,				XK_space,  setlayout,			{0} }, */
-	/* { MODKEY,				XK_comma,  focusmon,			{.i = -1 } }, */
-	/* { MODKEY,				XK_period, focusmon,			{.i = +1 } }, */
-	/* { MODKEY|ShiftMask,		XK_comma,  tagmon,				{.i = -1 } }, */
-	/* { MODKEY|ShiftMask,		XK_period, tagmon,				{.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_h,      incrgaps,		{.i = +1 } }, */
 	/* { MODKEY|Mod4Mask,              XK_l,      incrgaps,		{.i = -1 } }, */
 	/* { MODKEY|Mod4Mask|ShiftMask,    XK_h,      incrogaps,	{.i = +1 } }, */
@@ -152,8 +153,6 @@ static Key keys[] = {
 	/* { MODKEY|Mod4Mask,              XK_o,      incrohgaps,	{.i = -1 } }, */
 	/* { MODKEY|ShiftMask,             XK_y,      incrovgaps,	{.i = +1 } }, */
 	/* { MODKEY|ShiftMask,             XK_o,      incrovgaps,	{.i = -1 } }, */
-
-
 };
 
 /* button definitions */
